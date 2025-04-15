@@ -1,0 +1,69 @@
+.flash-message {
+    position: fixed;
+    top: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 500px;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeSlide 0.5s ease-out;
+    backdrop-filter: blur(6px);
+  }
+  
+  /* Success and Error colors */
+  .flash-success {
+    background: linear-gradient(135deg, #3cb371, #2e8b57);
+  }
+  
+  .flash-error {
+    background: linear-gradient(135deg, #e57373, #c62828);
+  }
+  
+  /* Close Button */
+  .flash-close {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: transform 0.2s ease;
+  }
+  
+  .flash-close:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Fade + Slide Animation */
+  @keyframes fadeSlide {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -20px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 480px) {
+    .flash-message {
+      font-size: 0.95rem;
+      padding: 0.8rem 1rem;
+    }
+  
+    .flash-close {
+      font-size: 1.1rem;
+    }
+  }
+  

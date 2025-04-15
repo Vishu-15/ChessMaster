@@ -1,0 +1,68 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #F4F4F4; /* Light background */
+    color: black;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Lower than sidebar */
+}
+
+
+/* Menu Icon */
+.menu {
+    margin-right: 1.5rem;
+    font-size: 1.5rem;
+    user-select: none;
+    padding: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.menu:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Brand Name */
+.brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    user-select: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        padding: 0.8rem 1rem;
+    }
+    .brand {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu {
+        font-size: 1.3rem;
+        padding: 0.6rem;
+    }
+    .brand {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,29 @@
+<% layout('./layouts/boilerplate') -%>
+<link rel="stylesheet" href="/css/allUsers.css">
+
+<div class="users-page">
+  <h2>All Players</h2>
+
+  <form class="search-form" method="GET" action="/users">
+    <input type="text" name="username" placeholder="Search by username..." value="<%= searchQuery %>" />
+    <button type="submit">Search</button>
+  </form>
+
+  <% if (users.length === 0) { %>
+    <p class="no-users">No users found.</p>
+  <% } else { %>
+    <div class="user-list">
+      <% users.forEach(user => { %>
+        <div class="user-card">
+          <img src="<%= user.profilePicture.url %>" alt="Profile Picture" />
+          <div class="user-details">
+            <h4><%= user.username %></h4>
+            <p><%= user.bio %></p>
+            <p>Rating: <%= user.rating %></p>
+            <a href="/users/<%= user._id %>" class="view-profile">View Profile</a>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  <% } %>
+</div>

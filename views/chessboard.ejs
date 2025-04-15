@@ -1,0 +1,28 @@
+<% layout('./layouts/boilerplate') -%>
+<link rel="stylesheet" href="/css/chessboard.css">
+<body>
+    <div class="user" data-username=<%=user.username%>></div>
+    <div class="players inactive">
+        <span id="player1"><%=currUser.username%></span>
+        <span class="vs">vs</span>
+        <span id="player2">Nishal</span>
+      </div>
+      
+    <div class="container">
+        <div class="board"></div>
+        <div class="display-block">
+            <button class="play-btn">New Game</button>
+            <div class="game-info">
+                <div class="move-history"></div>
+                <div class="messages"></div>
+                <div class="type-message inactive">
+                    <input type="text" placeholder="Enter message">
+                    <button class="msg-btn">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js" integrity="sha512-xRllwz2gdZciIB+AkEbeq+gVhX8VB8XsfqeFbUh+SzHlN96dEduwtTuVuc2u9EROlmW9+yhRlxjif66ORpsgVA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/js/board.js"></script>

@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="/css/flash.css">
+<% if(success && success.length){ %>
+    <div class="flash-message flash-success">
+      <span><%= success %></span>
+      <button class="flash-close" onclick="this.parentElement.style.display='none';">&times;</button>
+    </div>
+  <% } %>
+  
+  <% if(error && error.length){ %>
+    <div class="flash-message flash-error">
+      <span><%= error %></span>
+      <button class="flash-close" onclick="this.parentElement.style.display='none';">&times;</button>
+    </div>
+  <% } %>
+<script src="/js/flash.js"></script>

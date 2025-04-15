@@ -1,0 +1,39 @@
+<% layout('./layouts/boilerplate') -%>
+<link rel="stylesheet" href="/css/auth.css">
+
+<div class="auth-container">
+  <div class="chess-icon"></div>
+  
+  <h2>Join the Chess Arena</h2>
+
+  <form method="POST" action="/signup">
+
+    <input 
+      type="text" 
+      name="username" 
+      placeholder="Username" 
+      required 
+      autocomplete="username"
+    />
+
+    <input 
+      type="email" 
+      name="email" 
+      placeholder="Email" 
+      required 
+      autocomplete="email"
+    />
+
+    <input 
+      type="password" 
+      name="password" 
+      placeholder="Password" 
+      required 
+      autocomplete="current-password"
+    />
+
+    <button type="submit">Sign Up</button>
+
+    <div class="goToSignup">Already Registered ? <a href="/login">Login</a></div>
+  </form>
+</div>

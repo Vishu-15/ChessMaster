@@ -1,0 +1,55 @@
+<% layout('./layouts/boilerplate') -%>
+<link rel="stylesheet" href="/css/profile.css">
+
+<div class="profile-wrapper">
+  <!-- Left Box: User Info -->
+  <div class="profile-box profile-info">
+    <div class="profile-picture">
+      <img src=<%=user.profilePicture.url%> alt="Profile Picture" />
+    </div>
+    <h2><%= user.username %></h2>
+    <p class="email"><%= user.email %></p>
+    <p class="bio"><%= user.bio || "No bio added yet." %></p>
+    <p class="rating">♟️ Rating: <strong><%= user.rating %></strong></p>
+
+    <div class="stats">
+      <div><strong><%= user.winCount %></strong> Wins</div>
+      <div><strong><%= user.lossCount %></strong> Losses</div>
+      <div><strong><%= user.drawCount %></strong> Draws</div>
+    </div>
+
+    <% if(user._id.toString() == currUser._id.toString()) { %>
+      <a href="/profile/edit" class="edit-btn">Edit Profile</a>
+    <% } %>
+  </div>
+
+  <!-- Right Box: Game History -->
+  <div class="profile-box profile-games">
+    <h3>Game History</h3>
+    <% if (games.length === 0) { %>
+      <p class="no-games">No games played</p>
+    <% } else { %>
+        <div class="table-scroll-container">
+
+            <table class="game-table">
+                <thead>
+                  <tr>
+                    <th>Opponent</th>
+                    <th>Result</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% games.forEach(game => { %>
+                    <tr>
+                      <td><%= game.opponentUsername %></td>
+                      <td class=<%= game.result.toLowerCase() %>><%= game.result %></td>
+                      <td><%= new Date(game.date).toLocaleDateString() %></td>
+                    </tr>
+                  <% }) %>
+                </tbody>
+              </table>
+        </div>
+    <% } %>
+  </div>
+</div>

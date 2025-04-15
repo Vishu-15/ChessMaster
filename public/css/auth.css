@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #302e2b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .auth-container {
+    margin-top:4rem;
+    width: 90%;
+    max-width: 420px;
+    background: #1f1e1c;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+    border: 2px solid #ffffff22;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .auth-container h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #ffcc00;
+    text-shadow: 1px 1px 4px #000;
+    letter-spacing: 1px;
+  }
+  
+  /* Input Fields */
+  .auth-container input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ffffff33;
+    margin: 0.6rem 0;
+    background-color: #2a2a28;
+    color: white;
+    transition: border-color 0.3s, background-color 0.3s;
+  }
+  
+  .auth-container input:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #33322f;
+  }
+  
+  /* Submit Button */
+  .auth-container button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+  }
+  
+  .auth-container button:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: scale(1.03);
+    box-shadow: 0 8px 18px rgba(0, 123, 255, 0.5);
+  }
+  
+  .goToSignup{
+    color:white;
+    margin-top:2rem;
+  }
+  .goToSignup a{
+    text-decoration: none;
+    color:red;
+  }
+
+  /* Chess Knight Icon */
+  .chess-icon {
+    margin:0 auto;
+    width: 60px;
+    height: 60px;
+    background: url('/images/knight.png') no-repeat center center;
+    background-size: contain;
+    z-index: 2;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  /* Responsive Adjustments */
+  @media screen and (max-width: 500px) {
+    .auth-container {
+      padding: 1.5rem;
+    }
+  
+    .auth-container h2 {
+      font-size: 1.6rem;
+    }
+  
+    .auth-container input,
+    .auth-container button {
+      font-size: 0.95rem;
+      padding: 0.8rem;
+    }
+  }
+  

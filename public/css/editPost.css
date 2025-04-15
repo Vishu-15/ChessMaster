@@ -1,0 +1,113 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #1a1a1d;
+    padding: 2rem;
+}
+
+/* Edit Post Container */
+.edit-post-container {
+    max-width: 600px;
+    margin: 5rem auto 2rem; /* top margin added to avoid navbar overlap */
+    background-color: #2e2e33;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.edit-post-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #f5f5f5;
+}
+
+/* Form Styling */
+.edit-post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #dddddd;
+    font-weight: 500;
+}
+
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #444;
+    background-color: #1a1a1d;
+    color: #f5f5f5;
+    border-radius: 8px;
+    resize: vertical;
+}
+
+textarea::placeholder {
+    color: #aaa;
+}
+
+textarea:focus,
+input[type="file"]:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+/* Current Image Section */
+.edit-post-container p {
+    margin-top: 1rem;
+    color: #ddd;
+}
+
+.edit-post-container img {
+    margin-top: 0.5rem;
+    border-radius: 8px;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .edit-post-container {
+        padding: 1.5rem;
+        margin: 4rem 1rem 1rem;
+    }
+
+    .edit-post-container h2 {
+        font-size: 1.3rem;
+    }
+
+    button[type="submit"] {
+        font-size: 0.95rem;
+    }
+}

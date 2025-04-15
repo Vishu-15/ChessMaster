@@ -1,0 +1,22 @@
+<% layout('./layouts/boilerplate') -%>
+<link rel="stylesheet" href="/css/editPost.css">
+
+<div class="edit-post-container">
+  <h2>Edit Post</h2>
+  <form action="/posts/<%= post._id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="content">Content</label>
+      <textarea name="content" id="content" rows="5" required><%= post.content %></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="image">Change Image (optional)</label>
+      <input type="file" name="image" id="image">
+      <% if (post.image) { %>
+        <p>Current Image: <img src="<%= post.image.url %>" alt="Post Image" width="150"></p>
+      <% } %>
+    </div>
+
+    <button type="submit">Update Post</button>
+  </form>
+</div>

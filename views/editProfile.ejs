@@ -1,0 +1,34 @@
+<% layout('./layouts/boilerplate') -%>
+<link rel="stylesheet" href="/css/editProfile.css">
+
+<div class="edit-profile-container">
+  <h2>Edit Profile</h2>
+  <form action="/profile/<%= currUser._id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+    
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" value="<%= currUser.username %>" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" value="<%= currUser.email %>" required>
+    </div>
+
+    <div class="form-group">
+      <label for="bio">Bio</label>
+      <textarea id="bio" name="bio" maxlength="150" rows="3"><%= currUser.bio %></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="profilePicture">Change Profile Picture</label>
+      <input type="file" name="profilePicture" id="profilePicture">
+      <% if (currUser.profilePicture && currUser.profilePicture.length) { %>
+        <p>Current Image:</p>
+        <img src="<%= currUser.profilePicture %>" alt="Current Avatar" class="current-avatar">
+      <% } %>
+    </div>
+
+    <button type="submit">Update Profile</button>
+  </form>
+</div>
