@@ -75,13 +75,14 @@ module.exports.handleLogin = async(req,res)=>{
             
         const user = await User.findOne({email});
         if(!user){
-            console.log("User not registered");
+            req.flash("error","User not registered");
             return res.redirect('/signup');
         }
     
         const match = await bcrypt.compare(password, user.password);
         if (!match) {
-            return res.status(401).send('Invalid email or password.');
+            req.flash("error","Invalid email or password!");
+            return res.redirect("/login");
         }
     
         const token = jwt.sign(
